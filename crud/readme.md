@@ -25,3 +25,29 @@ VSC seleccionar interprete del etorno virual
 `
 /env/scripts/python.exe
 `
+
+## View
+
+La visualización del crud se utilizo uno de los mejores frameworks para despliegue de datos en proyecto de machine learning o data science, sacando provecho al poder de manejo de datos de python.
+
+Para desplegar el proyecto se debe utilizar el siguiente comando:
+
+`
+python -m streamlit run app.py
+`
+
+### Iconos
+
+Pagina de iconos para mejorar la parte visual
+
+[symbl](https://symbl.cc/es/)
+
+### Requerimientos
+
+Para generar los requerimientos se debe utilizar el siguiente comando:
+
+`pip freeze > requirements.txt`
+
+Si desea compilar el proyecto, luego de la activación del entorno virtual debe instalar los requerimientos del proyecto con el siguiente comando.
+
+`pip install requirements.txt`

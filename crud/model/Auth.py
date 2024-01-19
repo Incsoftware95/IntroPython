@@ -1,5 +1,6 @@
-
+#  Models
 from model.Security import Security
+#  Bcrypt
 import bcrypt
 
 class Auth(Security):

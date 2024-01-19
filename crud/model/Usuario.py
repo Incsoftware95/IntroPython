@@ -1,4 +1,4 @@
-# from data.Camiseta import Camiseta
+#  Models
 from model.Auth import Auth
 
 class Usuario(Auth):

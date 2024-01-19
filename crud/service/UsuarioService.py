@@ -3,10 +3,12 @@
 from model.Usuario import Usuario
 
 # SqlAlchemy
-from config.ModelsBD import Address, Base, User
+from config.ModelsBD import Address, User
 from config.ConnectionBD import connectionBD
 from sqlalchemy.orm import Session
 from sqlalchemy import select
+#  Pandas
+import pandas as pd
 
 class UsuarioService:
     """
@@ -38,11 +40,15 @@ class UsuarioService:
         engine =  connectionBD()
         with Session(engine) as session:
             stmt = select(User).join(Address.user).where(User.id==Address.user_id)
+
+            #  Captura de datos para presentar con streamlit
+            df = pd.read_sql(stmt,session.bind)
+            # print(df)
             dat =[]
             for user in session.scalars(stmt):
-                print(user)
+                # print(user)
                 dat.append(user)
-        return dat
+        return df
     def updateUsuario(self,user_id,data:dict):
         name, email , passwd = data.values()
         neWUser = Usuario(email= email,passwd=passwd,name=name)
