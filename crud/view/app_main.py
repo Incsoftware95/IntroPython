@@ -17,21 +17,21 @@ import sys
 
 def main():
     #  COnexion a la base de datos
-    engine = connectionBD()
+    # engine = connectionBD()
     # Crea los modelos si no existen
-    Base.metadata.create_all(engine,checkfirst=True)
+    # Base.metadata.create_all(engine,checkfirst=True)
 
-    page_names_to_funcs = {
-        "Home Page": main_page,
-        "Create": create,
-        "Read": read,
-        "Update": update,
-        "Delete": delete,
-    }
+    # page_names_to_funcs = {
+    #     "Home Page": main_page,
+    #     "Create": create,
+    #     "Read": read,
+    #     "Update": update,
+    #     "Delete": delete,
+    # }
     v = sys.version.split(" ")
     st.sidebar.header(f"🐍 {v[0]}")
-    selected_page = st.sidebar.selectbox("Selecciona una página", page_names_to_funcs.keys())
-    page_names_to_funcs[selected_page]()
+    # selected_page = st.sidebar.selectbox("Selecciona una página", page_names_to_funcs.keys())
+    # page_names_to_funcs[selected_page]()
 
 
 if __name__=="__main__":
